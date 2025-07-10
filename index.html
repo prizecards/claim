@@ -3,35 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>claimdigitalgiftcards</title>
+    <title>Earndigitalgiftcards</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *{
+    text-decoration: none;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+body{
+    background-color: white;
+}
+.navbar{
+    width: 100vw;
+    height: max(6vh,60px);
+    display: grid;
+    background-color: black;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+}
+#navLogo{
+    display: flex;
+    background: none;
+    border: none;
+    margin-left: 5%;
+    color: white;
+    font-size: min(2rem,5vw);
+    transition: 0.5s;
+    border-radius: 15px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    margin-left: 1vw;
+}
+.navbuttons{
+    display: flex;
+    grid-column: 6;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+
+}
+#home,#contact,#about{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+#home:hover{
+    background-color: white;
+    color: black;
+}
+#contact:hover{
+    background-color: white;
+    color: black;
+}
+#about:hover{
+    background-color: white;
+    color: black;
+}
+#navLogo:hover{
+    background-color: white;
+    color: black;
+    scale: 110%;
+}
+#box{
+    display: none;
+    font-size: 2em;
+}
+
+#welcomemessage{
+    font-size: 4vw;
+    grid-column: 1;
+    grid-row: 2;
+    color: white;
+    margin-left: 10px;
+    animation: horizontalParallax linear;
+    animation-timeline: scroll();
     
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1vh;
+}
+#title1{
+    padding: 2vw;
+    font-size: 8vw;
+}
+
+#background1{
+    display: grid;
+    background-color: black;
+    height: 100vh;
+    width: auto;
+    margin-top: 4vh;
+}
+#paragraph1{
+    font-size: 6vw;
+    padding: 2vw;
+    padding-top: 0;
+    grid-column: 1;
+}
+#background2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+    column-gap: 2vw;
+    margin-bottom: 30vh;
+}
+.paragraph{
+    font-size: 1.6rem;
+    margin: auto;
+    text-align: center;
+}
+
+.reviews{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    align-items: center;   
+}
+.reviewimage{
+    width: 20vh;
+    height: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.reviewtitle{
+    font-size: 3rem;
+}
+#first-review{
+    margin-top: 35vh;
+}
+
+.reviewtext{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.sitename{
+    font-size: 4rem;
+}
+.review-paragraph{
+    font-size: 2rem;
+    
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+.reviewparagraph-container{
+    grid-column: 1;
+    grid-row: 3;
+    width: 50vw;
+}
+
+.sitepicture{
+    height: 10em;
+    width: auto;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.signup{
+    display: flex;
+    background-color: black;
+    border-radius: 2em;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    grid-column: 1;
+    grid-row: 4;
+    height: 5rem;
+    width: 25rem;
+    
+}
+.link-text{
+    transition: 0.5s;
+}
+.signup:hover .link-text{
+    scale: 110%;    
+}
+.paragraph2-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    
+}
+.aboutus-page{
+    margin-top: 25vh;
+    width: 70vw;
+    margin-left: 2vw;
+}
+
+.linkbutton{
+    display: flex;
+    width: 18rem;
+    height: 4.5rem;
+    background: none;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.linkbutton:hover{
+    scale: 1.1;
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+@keyframes horizontalParallax{
+    to { translate: -600px ;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:450px) {
+
+    #box{
+        display: flex;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        height: 8vh;
+    }
+
+    .navbuttons{
+        display: flex;
+        flex-direction: column;
+        margin-top: -300000000000vh;
+        gap: 10vh;
+        margin-left: 10vw;
+        width: 80%;
+    }
+    .logo{
+        width: 100vw;
+        height: 8vh;
+        justify-content: space-between;
+        
+        
+    }
+    #navLogo{
+        font-size: 1.5rem;
+    }
+    #navLogo:hover{
+        scale: 105%;
+    }
+    .active1{
+        margin-top: 30vh;
+    }
+    .active2{
+        height: 100vh;
+    }
+    #box{
+        margin-right: 5%;
+        color: white;
+    }
+    
+    #background1{
+        height: 100vh;
+        width: 100vw;
+    }
+    #welcomemessage{
+        font-size: 5vw;
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 35vh;
+    }
+    #background2{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .title{
+        font-size: 10vw;
+    }
+    #paragraph2{
+        margin-top: 2%;
+        font-size: 8vw;
+        padding: 2%;
+    }
+    .reviews{
+        grid-template-columns: 100%;
+        margin-bottom: 10vh;
+        margin: 5vw;
+    }
+    #first-review{
+        margin-top: 20vh;
+    }
+    .reviewparagraph-container{
+        width: auto;
+        padding: 5%;
+    }
+    .sitename{
+        font-size: 2rem;
+        grid-row: 1;
+    }
+    .sitepicture{
+        display: flex;
+        grid-row: 2;
+        grid-column: 1;
+        height: 10vh;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .review-paragraph{
+        grid-row: 3;
+        font-size: 2rem;
+    }
+    .signup{
+        height: 10vh;
+        width: 90vw;
+        grid-row: 4;
+        grid-column: 1;
+        margin-top: 1vh;
+    }
+}
+@media screen and (max-width:360px){
+    #welcomemessage{
+        font-size: 100%;
+    }
+    .sitename{
+        font-size: 8vw;
+        padding: 5vw;
+    }
+}
+    </style>
 </head>
 <body>
     
     <div class="navbar">
         <div class="logo">
-            <a href="/"><button id="navLogo">claimdigitalgiftcards</button></a>
+            <a href="/"><button id="navLogo">Earndigitalgiftcards</button></a>
             <i class="fa fa-th-list" id="box"></i>
         </div>
         
         
         <div class="navbuttons" id="navbuttonss">
-            <a href="/"><button id="home">Home</button></a>
-            <a href="/"><button id="contact">Contact</button></a>
-            <a href="/"><button id="about">About</button></a>
         </div>
     </div>
 
         
     <div id="background1">
         <div id="welcomemessage">
-            <h1 id="title1">Welcome to <br>claimdigitalgiftcards !</h1>
-            <p id="paragraph1">A place to find legit ways to claim real gift cards.</p>
+            <h1 id="title1">Welcome to <br>Earndigitalgiftcards !</h1>
+            <p id="paragraph1">A guide that shows how to claim real gift cards.</p>
             
         </div>
         
@@ -40,83 +396,15 @@
     <div id="background2">
         
         <div class="paragraph2-container">
-            <h3 class="title">How to claim multiple gift cards ?</h3>
-            <p class="paragraph">Claiming a gift card doesn't have to be a headache. By following our guide, you can quickly redeem your gift card and start enjoying the benefits. Access our full Gift Card Redemption Guide and become a pro at making the most of every card!</p>
-        </div>
-        <div class="cardsbox">
-            <img src="images/amazon.png">
-            <img src="images/minecraft.webp">
-            <img src="images/nintendo.jpg">
-            <img src="images/psn.webp">
-            <img src="images/roblox.webp">
-            <img src="images/xbox.png">
-        </div>
-        <button class="linkbutton">Access the guide</button>
-        <div data-captcha-enable="true">
+            <h3 class="title">Tired of those scam sites where you complete long tasks and get nothing in return ?</h3>
+            <p class="paragraph">Don't worry, I got you ! The only real ways to get gift cards is to either buy them (through Amazon or other stores), or earn them through online contests. The first option is always guarenteed if you follow my instructions. The process is simple, register in the site below, complete surveys, and then cash out using Amazon gift cards, this will allow you to get Amazon balence and then buy any kind of gift card you want. Note that this method won't replace a full time job and should only be considered as a side hustle.</p>
         </div>
 
-    </div>
-
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    <script>
-        var navButtons = document.querySelector('.navbuttons')
-        const navBar = document.querySelector('.navbar')
-        const box = document.querySelector('#box')
-        box.addEventListener('click',function(){
-            navButtons.classList.toggle('active1')
-            navBar.classList.toggle('active2')
-        })
+        <div class="reviews">
+            <h1 class="reviewtitle">Ysense</h1>
+            <img src="https://play-lh.googleusercontent.com/ZAJVpxpjqy-6qj0bfmho4lRM0nr-CmtAw_yNeKTo6TanaV-lQ0DiZGNKINoTeQ38Bw" class="reviewimage">
+            <p class="reviewtext"> ySense is a legitimate GPT platform that lets users earn small amounts of money by completing surveys, offers, tasks, and referrals. It’s available globally, with a low payout threshold and fast payments, making it a good option for casual extra income. However, frequent survey disqualifications, low pay, and occasional tracking issues mean it’s better as a side hustle than a main source of income.</p>
+            <a href="https://ysense.com/?rb=216322952"><button class="linkbutton">Access site</button></a>
+        </div>
         
-    </script>
-
-    <script type="text/javascript" src="https://verifysuper.com/cp/js/w8por">
-    </script>
-
-
-</body>
-</html>
+    </div>
